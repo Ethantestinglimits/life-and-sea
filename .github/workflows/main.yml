@@ -42,3 +42,4 @@ jobs:
         with:
           # Repository upload token - get it from codecov.io. Required only for private repositories
           token: c8c309cb-c8d8-459b-86c8-61fd915896e8
+          flags: unittests
