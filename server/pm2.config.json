@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+            "name": "Life and Sea API",
+            "script": "npm",
+            "args" : "run develop"
+        }
+    ]
+}
