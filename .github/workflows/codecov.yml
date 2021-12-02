@@ -4,7 +4,7 @@ name: Codecov
   uses: codecov/codecov-action@v2.1.0
   with:
     # Repository upload token - get it from codecov.io. Required only for private repositories
-    token: # optional
+    token: c8c309cb-c8d8-459b-86c8-61fd915896e8
     # Comma-separated list of files to upload
     files: # optional
     # Directory to search for coverage reports.
