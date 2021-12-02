@@ -2,7 +2,7 @@
 
 # Life & Sea
 
-![<3]("https://img.shields.io/badge/made%20with-🐤-eb75e1")
+![<3]("https://img.shields.io/badge/made%20with-%F0%9F%90%A4-eb75e1")
 ![Open issues](https://shields.io/github/issues/Ethantestinglimits/life-and-sea)
 ![Open issues](https://shields.io/github/issues-pr/Ethantestinglimits/life-and-sea)
 
