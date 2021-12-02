@@ -1,2 +1,5 @@
 # JetBrains
 /.idea
+
+# npm
+package-lock.json
