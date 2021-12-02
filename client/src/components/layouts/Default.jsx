@@ -8,8 +8,6 @@ export default function Default({ children }) {
         <Header />
         <div className={styles.content}>{children}</div>
       </div>
-
-      <div id="cursorCircle"></div>
     </>
   );
 }
