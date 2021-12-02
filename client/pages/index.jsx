@@ -1,11 +1,12 @@
 import HomePage from "@template/HomePage";
 import Default from "@layout/Default";
+import axios from "@util/axios";
 
 export default function App(props) {
   return (
     <>
       <Default>
-        <HomePage data={props} />
+        <HomePage />
       </Default>
     </>
   );
