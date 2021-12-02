@@ -1,4 +1,4 @@
-import styles from "./Default.module.sass";
+import styles from "./Default.module.scss";
 import Header from "@module/Header/Header";
 
 export default function Default({ children }) {
