@@ -1,8 +1,4 @@
-<<<<<<< HEAD:client/src/components/templates/AuthPage.jsx
-import React, { useState } from "react";
-=======
 import React, { useEffect, useState } from "react";
->>>>>>> front:client/src/components/templates/LoginPage.jsx
 import styles from "./AuthPage.module.scss";
 
 const LoginPage = ({ showRegisterCallback }) => {

@@ -1,3 +1,5 @@
+@use '../../../../public/styles/_variables' as *;
+@use '../../../../public/styles/fonts.scss' as *;
 
 // BAR
 
@@ -6,61 +8,81 @@
   display: flex;
   flex-direction: row;
   align-items: start;
-  height: 40px;
-  width: 300px;
+  height: 10%;
+  width: 30%;
   margin-bottom: 30px;
+  font-family: Poppins, sans-serif;
+  
+  
 
   input {
-    border-right: 1px solid #efefef;
+    border-right: 1px solid #20507b;
     border-radius: 10px 0 0 10px;
     height: 35px;
     width: 100%;
+    font-family: Poppins, sans-serif;
+    color: white;
+
+    &::placeholder {
+      color: white;
+    }
+    
   }
 
   input:focus {
     outline: none;
+    color: white;
   }
 
   button {
-    border-left: 1px solid #efefef;
+    border-left: 1px solid #20507b;
     border-radius: 0 10px 10px 0;
     height: 35px;
   }
 }
 
 .sweetBorder {
-  border: 2px solid #e6e6e6;
+  border: 2px solid #236292;
   padding: 5px 10px;
-  background-color: white;
+  background-color: #20507b;
 }
 
 .results {
-  background-color: rgba(128, 163, 255, 0.5);
-  border: 2px solid midnightblue;
+  background-color: #20507b;
+  border: 2px solid #236292;
   border-radius: 3px;
-  width: 50%;
-  color: black;
+  width: 35%;
+  color: white;
+  border-radius: 10px;
+
+
 
   li {
     padding: 4px;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    border-bottom: 3px solid midnightblue;
+    align-items: center;
+    border-bottom: 3px solid #236292;
     font-family: "Arimo";
 
     div h2 {
       cursor: pointer;
+      padding: 1rem;
+      align-items: flex-start;
     }
     div h2:hover {
       text-decoration: underline;
-      text-decoration-color: #14097e;
+      text-decoration-color: #236292;
+    
     }
 
     img {
-      width: 20%;
+      width: 80px;
+      height: 80px;
       float: right;
-      justify-self: flex-end;
+      align-items: flex-end;
+      border-radius: 3rem;
+      border: 3px solid #236292;
+      object-fit: cover;
     }
   }
 

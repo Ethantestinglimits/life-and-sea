@@ -4,7 +4,7 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background-color: #3498db;
+  background-image: linear-gradient(0deg, #182848, #2980b9);
 
   .circle[animationLoading="1"] {
     -webkit-animation: spin 3s ease-in-out infinite;
@@ -46,12 +46,14 @@
     justify-content: center;
     align-items: center;
 
+    
+
     .foregroundCircle {
       display: flex;
       flex-direction: "column";
       justify-content: center;
       align-items: center;
-      background-color: #3498db;
+      background-image: linear-gradient(0deg, #182848, #2980b9);
       border-radius: 30vh;
       max-width: 65vw;
       max-height: 65vw;
@@ -61,7 +63,8 @@
         display: flex;
         flex-direction: column;
         input {
-          background-color: #2f8ac7;
+          background-color: #246698;
+          border: 2px solid white;
           color: rgb(235, 235, 235);
           border: 0;
           font-family: "Montserrat";
@@ -69,11 +72,11 @@
           font-size: 1.8vh;
           padding: 2.3vh;
           border-radius: 1vw;
-          border: 0.05vw solid #2e78aa;
+          color: white;
         }
 
         input::placeholder {
-          color: #cccccc;
+          color: white;
         }
 
         input:focus {
