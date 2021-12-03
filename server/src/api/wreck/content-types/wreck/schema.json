@@ -46,6 +46,18 @@
       "type": "component",
       "repeatable": true,
       "component": "relation.rescuers"
+    },
+    "ShipRescuers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ship.ship",
+      "inversedBy": "wrecksRescuers"
+    },
+    "shipWreckeds": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ship.ship",
+      "inversedBy": "wrecksWreckeds"
     }
   }
 }

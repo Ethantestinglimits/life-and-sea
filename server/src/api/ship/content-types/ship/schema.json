@@ -36,6 +36,18 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "wrecksRescuers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::wreck.wreck",
+      "inversedBy": "ShipRescuers"
+    },
+    "wrecksWreckeds": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::wreck.wreck",
+      "inversedBy": "shipWreckeds"
     }
   }
 }
