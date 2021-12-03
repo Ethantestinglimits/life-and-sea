@@ -11,7 +11,7 @@ export default function SearchBar() {
     const [active, setActive] = useState(false)
     const [results, setResults] = useState([])
 
-    const endpoint = (query) => `search?query=${query}`
+    const endpoint = (query) => `api/search?query=${query}`
 
     const onChange = useCallback((e) => {
         const query = e.target.value
