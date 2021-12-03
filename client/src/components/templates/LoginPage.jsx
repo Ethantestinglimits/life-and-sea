@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from "react";
 import styles from "./AuthPage.module.scss";
+import axios from "@util/axios";
 
 const LoginPage = ({ showRegisterCallback }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [loading, setLoading] = useState(0);
 
+  const login = async () => {
+    const resp = await axios.post("auth/local/register", {
+      username: "Strapi user",
+      email: "user@strapi.io",
+      password: "strapiPassword",
+    });
+  };
+
   return (
-    
     <div className={styles.layout}>
       <div className={styles.ripple_header}>
         <div className={styles.ripple}></div>
@@ -18,12 +26,7 @@ const LoginPage = ({ showRegisterCallback }) => {
       </div>
       <div className={styles.circle} animationLoading={loading}>
         <div className={styles.foregroundCircle}>
-<<<<<<< HEAD
-        
           <form autocomplete="off">
-=======
-          <form autoComplete="off">
->>>>>>> front
             <input
               placeholder="Email"
               type="text"
