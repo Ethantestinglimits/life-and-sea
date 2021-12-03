@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styles from './SearchBar.module.scss'
 import {useCallback, useRef, useState} from "react";
+import {useRouter} from "next/router";
 
 export default function SearchBar() {
     const searchRef = useRef(null)
@@ -40,7 +41,7 @@ export default function SearchBar() {
 
     return (<>
         <div className={styles.searchContainer}>
-            <div className={styles.searchBar}>
+            <form className={styles.searchBar}>
                 <input
                     onChange={onChange}
                     onFocus={onFocus}
@@ -49,17 +50,20 @@ export default function SearchBar() {
                     placeholder="Chercher une personne"
                     className={styles.sweetBorder}
                 />
-                <button className={styles.sweetBorder}>🔍</button>
-            </div>
+                <button
+                    className={styles.sweetBorder}
+                >🔍</button>
+            </form>
             {active && results.length > 0 && (
                 <ul className={styles.results}>
-                    {results.map(({id, title, desc}) => (
-                        // TODO: HANDLE RESPONSE
+                    {results.map(({id, title, img}) => (
                         <li key={id}>
-                            <Link href={`/profile/${id}`}>
-                                <h2>{title}</h2>
-                            </Link>
-                            <div>{desc}</div>
+                            <div className={title}>
+                                <Link href={`/profile/${id}`}>
+                                    <h2>{title}</h2>
+                                </Link>
+                            </div>
+                            {img && <img src={img} alt={title}/>}
                         </li>
                     ))}
                 </ul>
