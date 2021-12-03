@@ -9,8 +9,7 @@ export default function SearchBar() {
     const [active, setActive] = useState(false)
     const [results, setResults] = useState([])
 
-    const endpoint = (query) => `api/search?q=${query}`
-    // TODO: CHECK API ENDPOINT
+    const endpoint = (query) => `api/search?query=${query}`
 
     const onChange = useCallback((e) => {
         const query = e.target.value
@@ -20,7 +19,6 @@ export default function SearchBar() {
                 .then(res => res.json())
                 .then(res => {
                     setResults(res.results)
-                    // TODO: CHECK API RESPONSE
                 })
         } else {
             setResults([])
