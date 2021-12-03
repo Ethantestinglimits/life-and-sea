@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from './Header.module.sass'
+import styles from './Header.module.scss'
 
 import { tabs } from '@config/navbar'
 
