@@ -47,7 +47,7 @@ export default function SearchBar() {
                     onFocus={onFocus}
                     value={query}
                     type="text"
-                    placeholder="Chercher une personne"
+                    placeholder="Chercher une personne..."
                     className={styles.sweetBorder}
                 />
                 <button
@@ -58,12 +58,13 @@ export default function SearchBar() {
                 <ul className={styles.results}>
                     {results.map(({id, title, img}) => (
                         <li key={id}>
+                            {img && <img src={img} alt={title}/>}
                             <div className={title}>
                                 <Link href={`/profile/${id}`}>
                                     <h2>{title}</h2>
                                 </Link>
                             </div>
-                            {img && <img src={img} alt={title}/>}
+                            
                         </li>
                     ))}
                 </ul>

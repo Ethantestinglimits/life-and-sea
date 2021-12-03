@@ -1,7 +1,7 @@
-import '@style/fonts.sass'
-import '@style/main.sass'
-import '@style/scrollbar.sass'
-import '@style/reset.sass'
+import '@style/fonts.scss'
+import '@style/main.scss'
+import '@style/scrollbar.scss'
+import '@style/reset.scss'
 
 function MyApp({ Component, pageProps }) {
 
