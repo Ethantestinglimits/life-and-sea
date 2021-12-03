@@ -18,8 +18,12 @@ const LoginPage = ({ showRegisterCallback }) => {
       </div>
       <div className={styles.circle} animationLoading={loading}>
         <div className={styles.foregroundCircle}>
+<<<<<<< HEAD
         
           <form autocomplete="off">
+=======
+          <form autoComplete="off">
+>>>>>>> front
             <input
               placeholder="Email"
               type="text"
