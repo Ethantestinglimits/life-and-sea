@@ -1,6 +1,5 @@
 import styles from './HomePage.module.scss';
 import React, { useState } from "react";
-import Wave1 from '@asset/wave1.svg'
 // import { Wave1, Wave2, Wave3 } from '@element/Wave';
 
 export default function HomePage() {
