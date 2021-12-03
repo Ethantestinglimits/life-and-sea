@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_relation_wreckeds",
+  "info": {
+    "displayName": "Wrecked",
+    "icon": "allergies"
+  },
+  "options": {},
+  "attributes": {
+    "person": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::person.person"
+    },
+    "Dead": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

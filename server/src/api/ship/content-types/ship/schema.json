@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ships",
+  "info": {
+    "singularName": "ship",
+    "pluralName": "ships",
+    "displayName": "Ship",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Launch": {
+      "type": "date"
+    },
+    "Working": {
+      "type": "boolean"
+    },
+    "Validate": {
+      "type": "boolean",
+      "default": false
+    },
+    "Bio": {
+      "type": "richtext"
+    },
+    "Picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "wrecksRescuers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::wreck.wreck",
+      "inversedBy": "ShipRescuers"
+    },
+    "wrecksWreckeds": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::wreck.wreck",
+      "inversedBy": "shipWreckeds"
+    }
+  }
+}

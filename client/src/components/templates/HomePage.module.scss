@@ -1,14 +1,18 @@
 @use "_variables.scss" as *;
 
+
 .waves {
 
     position: absolute;
-    bottom: 0;  
+    bottom: -20%;
+    width: 120%;
+    left: -10%;
 
     .wave {
 
         position: absolute;
-    
+        bottom: -20%;
+
         &:nth-child(1) { 
             fill: $waveBaseColor; 
         }
@@ -19,18 +23,26 @@
     
         &:nth-child(3) { 
             fill: adjust-hue($waveBaseColor, 30deg); 
+            margin-top: 5%;
+            bottom: -20% !important;
         }
         
     }
 }
 
+.sunLayer {
 
+    width: 120vw;
+    z-index: -1;
+    
+    display: flex !important;
+    justify-content: center;
 
-.sun {
+    .sun {
 
-    height: 60vh;
-    position: absolute;
-    bottom: 30%;
-    left: 50%;
-    transform: translateX(-50%);
+        position: absolute;
+        height: 100vh;
+        z-index: -1 !important;
+    }
 }
+

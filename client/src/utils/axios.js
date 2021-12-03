@@ -2,11 +2,19 @@ import axios from "axios";
 
 import baseURL from "@config/connection";
 
-const instance = axios.create({
-  baseURL,
-  headers: {
-    Authorization: `Bearer ${process.env.ADMIN_JWT_SECRET}`,
-  },
-});
+const axiosInstances = {
 
-export default instance;
+  axiosAdmin: axios.create({
+    baseURL,
+    headers: {
+      Authorization: `Bearer ${process.env.ADMIN_JWT_SECRET}`,
+    },
+  }),
+
+  axiosPublic: axios.create({
+    baseURL,
+  })
+
+}
+
+export default axiosInstances;

@@ -1,5 +1,5 @@
 const apiURL = {
-  development: "https://lifeandsea-api.barthofu.com",
+  development: "https://lifeandsea-api.barthofu.com/api",
   production: "",
 };
 
