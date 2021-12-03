@@ -17,11 +17,11 @@
             fill: $waveBaseColor; 
         }
     
-        &:nth-child(2) { 
+        &:nth-child(3) { 
             fill: adjust-hue($waveBaseColor, 15deg); 
         }
     
-        &:nth-child(3) { 
+        &:nth-child(4) { 
             fill: adjust-hue($waveBaseColor, 30deg); 
             margin-top: 5%;
             bottom: -20% !important;
@@ -37,12 +37,32 @@
     
     display: flex !important;
     justify-content: center;
+    margin-bottom: 20vh;
 
     .sun {
 
         position: absolute;
-        height: 100vh;
+        height: 150vh;
+        padding-bottom: 40vh !important;
+        margin-bottom: 40vh !important;
         z-index: -1 !important;
     }
 }
 
+.batoLayer {
+
+    height: 150vh;
+    width: 120vw;
+    z-index: 0;
+    
+    display: flex !important;
+    justify-content: center;
+
+    .bato {
+
+        width: 400px !important;
+        height: 400px !important;
+        margin-bottom: 50vh !important;
+        transform: scale(0.4) !important;
+    }
+}

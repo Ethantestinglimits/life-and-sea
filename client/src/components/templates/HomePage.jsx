@@ -1,6 +1,7 @@
 import styles from "./HomePage.module.scss";
 import React, { useState, useEffect, useRef } from "react";
 import Parallax from "parallax-js";
+import Image from 'next/image'
 
 export default function HomePage() {
   const sceneEl = useRef(null);
@@ -32,6 +33,11 @@ export default function HomePage() {
               stroke="none"
             ></path>
           </svg>
+
+          <div className={styles.batoLayer} data-depth="0.1">
+            <Image width={300} height={200} className={styles.bato} src="/assets/bato.png" alt="BATOOOO" layout="fill" />
+          </div>
+
           <svg
             className={styles.wave}
             data-depth="-0.20"
@@ -59,7 +65,7 @@ export default function HomePage() {
             ></path>
           </svg>
 
-          <div className={styles.sunLayer} data-depth="0.20">
+          <div className={styles.sunLayer} data-depth="-0.50">
             <svg className={styles.sun} viewBox="0 0 10 10">
               <circle cx="5" cy="5" r="5" fill="url('#a')" />
               <linearGradient id="a" gradientTransform="rotate(90)">
