@@ -14,7 +14,7 @@
 * Bartholomé
 * Ethan
 * Lazare
-* Guillaume
+* Cyril
 * Erwann
 
 ### Les défis
