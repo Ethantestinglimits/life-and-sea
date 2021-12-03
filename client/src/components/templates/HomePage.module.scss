@@ -1,0 +1,36 @@
+@use "_variables.scss" as *;
+
+.waves {
+
+    position: absolute;
+    bottom: 0;  
+
+    .wave {
+
+        position: absolute;
+    
+        &:nth-child(1) { 
+            fill: $waveBaseColor; 
+        }
+    
+        &:nth-child(2) { 
+            fill: adjust-hue($waveBaseColor, 15deg); 
+        }
+    
+        &:nth-child(3) { 
+            fill: adjust-hue($waveBaseColor, 30deg); 
+        }
+        
+    }
+}
+
+
+
+.sun {
+
+    height: 60vh;
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}

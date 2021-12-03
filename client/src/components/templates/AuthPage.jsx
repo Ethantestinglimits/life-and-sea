@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { styles } from "@style/";
+import styles from "./AuthPage.module.scss";
 
 const AuthPage = () => {
   const [firstName, setFirstName] = useState("");
