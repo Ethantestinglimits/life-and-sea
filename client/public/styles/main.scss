@@ -1,26 +1,23 @@
 @use '_variables' as *;
 
 :root {
+    --background-color: #{$backgroundColor};
     --primary-color: #{$primaryColor};
-    --secondary-color: #{$secondaryColor};
 }
 
 
 body {
     overflow: hidden;
-    background: $backgroundColor;
 
     font-family: 'Archivo Black', sans-serif;
-    color: $primaryColor;
-    
+    color: var(--primary-color);
+    background-color: var(--background-color);
+
     width: 100vw;
     height: 100%;
 
     overflow: hidden;
-
     // background-color: rgb(29, 29, 29);
-
-
 }
 
 

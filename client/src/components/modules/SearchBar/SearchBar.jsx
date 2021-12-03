@@ -2,8 +2,10 @@ import Link from 'next/link';
 import styles from './SearchBar.module.scss'
 import {useCallback, useRef, useState} from "react";
 import {useRouter} from "next/router";
+import { axiosPublic } from '@util/axios'
 
 export default function SearchBar() {
+
     const searchRef = useRef(null)
     const [query, setQuery] = useState('')
     const [active, setActive] = useState(false)
@@ -15,7 +17,7 @@ export default function SearchBar() {
         const query = e.target.value
         setQuery(query)
         if (query.trim().length) {
-            fetch(endpoint(query.trim()))
+            axiosPublic(endpoint(query.trim()))
                 .then(res => res.json())
                 .then(res => {
                     setResults(res.results)
@@ -25,17 +27,19 @@ export default function SearchBar() {
         }
     }, [])
 
-    const onFocus = useCallback(() => {
-        setActive(true)
-        window.addEventListener('click', onClick)
-    }, [])
-
     const onClick = useCallback((e) => {
         if (searchRef.current && !searchRef.current.contains(e.target)) {
             setActive(false)
             window.removeEventListener('click', onClick)
         }
     }, [])
+
+
+    const onFocus = useCallback(() => {
+        setActive(true)
+        window.addEventListener('click', onClick)
+    }, [onClick])
+
 
     return (<>
         <div className={styles.searchContainer}>
