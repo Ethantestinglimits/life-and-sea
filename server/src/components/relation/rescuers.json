@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_rescuers_rescuers",
+  "info": {
+    "displayName": "Rescuers",
+    "icon": "anchor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "rescuer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::person.person"
+    },
+    "Role": {
+      "type": "enumeration",
+      "enum": [
+        "CapitaineNavire",
+        "SecondCapitaine",
+        "LieutenantNavigation",
+        "ChefMecanicien",
+        "OfficierMecanicien",
+        "OuvrierMecanicien",
+        "MaitreElectricien",
+        "MaitreMachine",
+        "Matelot",
+        "Timonier",
+        "MaitreEquipage",
+        "Cuisinier",
+        "Passager"
+      ],
+      "default": "Passager"
+    },
+    "Dead": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

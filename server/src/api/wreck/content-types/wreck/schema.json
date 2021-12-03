@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wrecks",
+  "info": {
+    "singularName": "wreck",
+    "pluralName": "wrecks",
+    "displayName": "Wreck",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Location": {
+      "type": "string",
+      "required": false
+    },
+    "Date": {
+      "type": "date"
+    },
+    "Bio": {
+      "type": "richtext"
+    },
+    "Picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Validate": {
+      "type": "boolean",
+      "default": false
+    },
+    "Wrecked": {
+      "type": "component",
+      "repeatable": true,
+      "component": "relation.wrecked"
+    },
+    "Rescuers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "relation.rescuers"
+    }
+  }
+}
