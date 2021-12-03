@@ -2,8 +2,188 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  form {
-    input {
+  height: 100vh;
+  width: 100vw;
+  background-color: #3498db;
+
+  .circle[animationLoading="1"] {
+    -webkit-animation: spin 3s ease-in-out infinite;
+    -moz-animation: spin 3s ease-in-out infinite;
+    animation: spin 3s ease-in-out infinite;
+
+    .foregroundCircle {
+      -webkit-animation: counterSpin 3s ease-in-out infinite;
+      -moz-animation: counterSpin 3s ease-in-out infinite;
+      animation: counterSpin 3s ease-in-out infinite;
     }
+
+    @keyframes counterSpin {
+      100% {
+        -webkit-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+      }
+    }
+  }
+
+  @keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  .circle {
+    position: absolute;
+    overflow: hidden;
+    background-image: url("/assets/buoy.png");
+    background-size: contain;
+    height: 80vh;
+    width: 80vh;
+    max-width: 90vw;
+    max-height: 90vw;
+    display: flex;
+    flex-direction: "column";
+    justify-content: center;
+    align-items: center;
+
+    .foregroundCircle {
+      display: flex;
+      flex-direction: "column";
+      justify-content: center;
+      align-items: center;
+      background-color: #3498db;
+      border-radius: 30vh;
+      max-width: 65vw;
+      max-height: 65vw;
+      height: 55vh;
+      width: 55vh;
+      form {
+        display: flex;
+        flex-direction: column;
+        input {
+          background-color: #2f8ac7;
+          color: rgb(235, 235, 235);
+          border: 0;
+          font-family: "Montserrat";
+          font-weight: 600;
+          font-size: 1.8vh;
+          padding: 2.3vh;
+          border-radius: 1vw;
+          border: 0.05vw solid #2e78aa;
+        }
+
+        input::placeholder {
+          color: #cccccc;
+        }
+
+        input:focus {
+          outline: none;
+        }
+
+        button {
+          background-color: #2e78aa;
+          color: rgb(235, 235, 235);
+          border: 0;
+          font-family: "Montserrat";
+          font-weight: 600;
+          font-size: 1.8vh;
+          padding: 2.3vh;
+          margin-right: 3vw;
+          margin-left: 3vw;
+          border-radius: 1vw;
+          cursor: pointer;
+        }
+
+        p {
+          font-family: "Montserrat";
+          text-align: center;
+          margin-top: 1vw;
+          font-weight: 600;
+          font-size: 0.8em;
+          user-select: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.spaceH {
+  height: 2vh;
+}
+
+.wave {
+  margin-top: 70vh;
+  position: relative;
+  opacity: 0;
+  top: 0;
+  width: 2px;
+  height: 1px;
+  border: #fff 7px solid;
+  -moz-border-radius: 30vh;
+  -webkit-border-radius: 30vh;
+  border-radius: 30vh;
+  -moz-animation-name: ripple;
+  -webkit-animation-name: ripple;
+  animation-name: ripple;
+  -moz-animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -moz-animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.wave:after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  top: -1.1vh;
+  left: -1.1vh;
+  width: 2px;
+  height: 1px;
+  border: #fff 5px solid;
+  -moz-border-radius: 30vh;
+  -webkit-border-radius: 30vh;
+  border-radius: 30vh;
+  -moz-animation-name: ripple-2;
+  -webkit-animation-name: ripple-2;
+  animation-name: ripple-2;
+  -moz-animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@keyframes ripple {
+  from {
+    opacity: 1;
+  }
+  to {
+    width: 60vh;
+    height: 60vh;
+    border-width: 1px;
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-2 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    width: 20vh;
+    left: 20vh;
+    top: 20vh;
+    height: 20vh;
+    border-width: 1px;
   }
 }
