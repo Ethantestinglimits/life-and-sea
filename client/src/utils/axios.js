@@ -3,7 +3,6 @@ import axios from "axios";
 import baseURL from "@config/connection";
 
 const axiosInstances = {
-
   axiosAdmin: axios.create({
     baseURL,
     headers: {
@@ -13,8 +12,7 @@ const axiosInstances = {
 
   axiosPublic: axios.create({
     baseURL,
-  })
-
-}
+  }),
+};
 
 export default axiosInstances;

@@ -2,8 +2,10 @@ import Link from 'next/link';
 import styles from './SearchBar.module.scss'
 import {useCallback, useRef, useState} from "react";
 import {useRouter} from "next/router";
-import { axiosPublic } from '@util/axios'
-
+import axios from 'axios'
+import baseURL from "@config/connection";
+import { Person, Ship, Wreck } from '@element/SearchResults'
+ 
 export default function SearchBar() {
 
     const searchRef = useRef(null)
@@ -11,16 +13,28 @@ export default function SearchBar() {
     const [active, setActive] = useState(false)
     const [results, setResults] = useState([])
 
-    const endpoint = (query) => `api/search?query=${query}`
+    const endpoint = (query) => `/search?query=${query}`
 
     const onChange = useCallback((e) => {
         const query = e.target.value
         setQuery(query)
         if (query.trim().length) {
-            axiosPublic(endpoint(query.trim()))
-                .then(res => res.json())
+            const uri = endpoint(query.trim())
+            console.log(uri)
+            axios.get(baseURL + uri)
                 .then(res => {
-                    setResults(res.results)
+                    return res?.data || null
+                })
+                .then(res => {
+                    if (res) {
+                        const formatedResults = [
+                            res.person.map(entity => Object.assign(entity, { type: 'person' })),
+                            res.ship.map(entity => Object.assign(entity, { type: 'ship' })),
+                            res.wreck.map(entity => Object.assign(entity, { type: 'wreck' }))
+                        ].flat()
+                        console.log(formatedResults)
+                        setResults(formatedResults)
+                    }
                 })
         } else {
             setResults([])
@@ -56,19 +70,13 @@ export default function SearchBar() {
                     className={styles.sweetBorder}
                 >🔍</button>
             </form>
-            {active && results.length > 0 && (
+            {results?.length > 0 && (
                 <ul className={styles.results}>
-                    {results.map(({id, title, img}) => (
-                        <li key={id}>
-                            {img && <img src={img} alt={title}/>}
-                            <div className={title}>
-                                <Link href={`/profile/${id}`}>
-                                    <h2>{title}</h2>
-                                </Link>
-                            </div>
-                            
-                        </li>
-                    ))}
+                    {results.map((entity) => {
+                        if (entity.type === 'person') return <Person entity={entity}/>
+                        if (entity.type === 'ship') return <Ship entity={entity}/> 
+                        if (entity.type === 'wreck') return <Wreck entity={entity}/>
+                    })}
                 </ul>
             )}
         </div>

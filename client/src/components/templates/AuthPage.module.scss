@@ -60,7 +60,7 @@
     }
   }
 
-  .circle[animationLoading="1"] {
+  .circle[animationloading="1"] {
     -webkit-animation: spin 3s ease-in-out infinite;
     -moz-animation: spin 3s ease-in-out infinite;
     animation: spin 3s ease-in-out infinite;
@@ -183,7 +183,7 @@
           color: rgb(235, 235, 235);
           border: 0;
           font-family: "Montserrat";
-          font-weight: 600;
+          font-weight: 400;
           font-size: 1.8vh;
           padding: 2.3vh;
           border-radius: 1vw;
@@ -203,7 +203,7 @@
           color: rgb(235, 235, 235);
           border: 0;
           font-family: "Montserrat";
-          font-weight: 600;
+          font-weight: 400;
           font-size: 1.8vh;
           padding: 2.3vh;
           margin-right: 3vw;
@@ -216,7 +216,7 @@
           font-family: "Montserrat";
           text-align: center;
           margin-top: 1vw;
-          font-weight: 600;
+          font-weight: 400;
           font-size: 0.8em;
           user-select: none;
           cursor: pointer;
