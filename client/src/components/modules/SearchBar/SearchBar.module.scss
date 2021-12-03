@@ -35,16 +35,37 @@
 }
 
 .results {
-  background-color: white;
+  background-color: rgba(128, 163, 255, 0.5);
+  border: 2px solid midnightblue;
   border-radius: 3px;
   width: 50%;
   color: black;
 
   li {
+    padding: 4px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
-    cursor: pointer;
+    border-bottom: 3px solid midnightblue;
+    font-family: "Arimo";
+
+    div h2 {
+      cursor: pointer;
+    }
+    div h2:hover {
+      text-decoration: underline;
+      text-decoration-color: #14097e;
+    }
+
+    img {
+      width: 20%;
+      float: right;
+      justify-self: flex-end;
+    }
+  }
+
+  li:last-child {
+    border-bottom: none;
   }
 }
 
